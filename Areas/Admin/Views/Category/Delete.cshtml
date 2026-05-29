@@ -1,0 +1,31 @@
+@model BTVN6.Models.Category
+@{
+    ViewData["Title"] = "Xóa danh mục";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+<h3>Bạn có chắc muốn xóa danh mục này?</h3>
+@if (Model.Products?.Any() == true)
+{
+    <div class="alert alert-warning">
+        <strong>Cảnh báo:</strong> Danh mục này đang có @Model.Products.Count sản phẩm. Khi xác nhận xóa, toàn bộ sản phẩm thuộc danh mục này cũng sẽ bị xóa.
+    </div>
+}
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">Tên</dt>
+        <dd class="col-sm-10">@Model.Name</dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Xóa" class="btn btn-danger" />
+        <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+    </form>
+</div>

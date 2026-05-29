@@ -1,0 +1,26 @@
+## Visual Studio
+.vs/
+bin/
+obj/
+*.user
+*.userosscache
+*.sln.docstates
+*.suo
+
+## Rider / Resharper
+.idea/
+*.user
+
+## Publishing / Output
+[Dd]ebug/
+[Rr]elease/
+publish/
+dist/
+
+## User Secrets & App Settings local overrides
+appsettings.Development.json
+secrets.json
+
+## OS files
+.DS_Store
+Thumbs.db
